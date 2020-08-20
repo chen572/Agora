@@ -4,15 +4,18 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { inventory } from './stores/InventoryStore'
+import { Provider } from 'mobx-react'
 
 inventory.addItem('test')
 inventory.addItem('tes3')
 inventory.addItem('tes5')
 
+const stores = { inventory }
+
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider {...stores}>
     <App store={inventory} />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 

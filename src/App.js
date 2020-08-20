@@ -4,11 +4,10 @@ import './App.css';
 import { observer } from 'mobx-react';
 
 const App = observer((props) => {
-  const { store } = props
 
   return (
     <div className="App">
-      <Market store={store} />
+      <Market />
     </div>
   );
 })
